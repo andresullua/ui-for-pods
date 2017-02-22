@@ -17,6 +17,6 @@ function load_ui_for_pods() {
   wp_register_style('ui_css', plugin_dir_url(__FILE__).'css/style.css');
   wp_enqueue_style('ui_css' );
   //js
-  wp_register_script('ui_js', plugin_dir_url(__FILE__).'js/script.js');
+  wp_register_script('ui_js', plugin_dir_url(__FILE__).'js/script.js', array('jquery'));
   wp_enqueue_script('ui_js');  
 }

@@ -6,8 +6,9 @@ This is a work in progress to improve [Pods](http://pods.io/) user interface thr
 The goal is to add custom titles, relate and group fields, show/hide fields with selects, etc.
 
 ## First Stage
-- [ ] Inline Title
-- [ ] Custom Title
+- [x] Inline Title
+- [x] Custom Title
+- [ ] Horizontal Rule
 - [ ] Related fields
 - [ ] Show/Hide Selects
 
