@@ -10,3 +10,12 @@ label.pods_inline_title{
 label.pods_hidden_label{
   display:none!important;
 }
+
+tr.pods_horizontal_rule{
+  border-bottom: 1px solid #ddd;
+}
+tr.pods_horizontal_rule th,
+tr.pods_horizontal_rule td{
+  height: 1px;
+  padding: 5px 0;
+}

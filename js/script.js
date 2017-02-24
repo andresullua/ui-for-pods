@@ -10,13 +10,14 @@ var UiForPods = function(){
   
   var add_css = {
     title: prefix+'title_',
-    related: prefix+'related_',
-    placeholder: prefix+'placeholder_'
+    placeholder: prefix+'placeholder_',
+    horizontal_rule: prefix+'horizontal_rule'
   }
   
   this.init = function(){
     titles();
     placeholder();
+    horizontal_rule();
     jQuery(form).show();
   }
 
@@ -25,8 +26,9 @@ var UiForPods = function(){
       var $this = jQuery(this);
       var $tr = jQuery(this).closest('tr');
       var classes = $this.attr('class');
-      var title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title,'').replace(/-/g, " ");
-      title = title.replace(title.slice(title.indexOf(prefix)),'');
+      var title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title,'');
+      title = getCleanText(title);
+
       var id = 'title-'+e;
       if(title){
         $this.removeClass(add_css.title+title);
@@ -35,39 +37,14 @@ var UiForPods = function(){
       }
     });
   }
-  
-  var related = function(){
-    //name: pods_related_{id}
-    jQuery("label[class*='"+add_css.related+"']").each(function(){
-      var $this = jQuery(this);
-      var $tr	= $this.closest('tr');
-      var classes = $this.attr('class');
-      var id = classes.slice(classes.indexOf(add_css.related)).replace(add_css.related,'');
-      var placeholder = '';
-      if(id){
-        debugger;
-        if(id.indexOf('_') > -1){
-          debugger;
-          placeholder = "Title";
-        }else if( id.indexOf('link_') > -1){
-          placeholder = "Link";
-          var n = id.replace('link_','');
-          if(jQuery('.'+buttonId+'text-'+n).length){
-            $this.hide();
-          }
-        }
-      }
-      $tr.find('input').attr('placeholder', placeholder);
-    })
-  }
-  
+    
   var placeholder = function(){
     jQuery("label[class*='"+add_css.placeholder+"']").each(function(){
       var $this = jQuery(this);
       var $tr	= $this.closest('tr');
       var classes = $this.attr('class');
-      var placeholder = classes.slice(classes.indexOf(add_css.placeholder)).replace(add_css.placeholder,'').replace(/-/g, " ");
-      placeholder = placeholder.replace(placeholder.slice(placeholder.indexOf(prefix)),'');
+      var placeholder = classes.slice(classes.indexOf(add_css.placeholder)).replace(add_css.placeholder,'');
+      placeholder = getCleanText(placeholder);
       if(placeholder){
         $this.removeClass(add_css.placeholder+placeholder);
         $tr.find('input').attr('placeholder', placeholder);
@@ -75,6 +52,26 @@ var UiForPods = function(){
     })
   }
   
+  
+  var horizontal_rule = function(){
+    jQuery("label[class*='"+add_css.horizontal_rule+"']").each(function(){
+      var $this = jQuery(this);
+      var $tr	= $this.closest('tr');
+      $this.removeClass(add_css.horizontal_rule);
+      jQuery('<tr class="'+add_css.horizontal_rule+'"><th></th><td></td></tr>').insertAfter($tr);
+    })
+  }
+  
+  //helpers
+  function getCleanText(text){  
+    if(text.indexOf(prefix)>-1){
+      text = text.replace(text.slice(text.indexOf(prefix)),'');
+    }     
+    var start_pos = text.indexOf('{') + 1;
+    var end_pos = text.indexOf('}',start_pos);
+    var text_to_get = text.substring(start_pos,end_pos)
+    return text_to_get;
+  }  
   
   this.init();
 

@@ -9,7 +9,7 @@ The goal is to add custom titles, placeholders, show/hide fields with selects, e
 - [x] Custom Title
 - [x] Placeholder
 - [x] Hidden Label
-- [ ] Horizontal Rule
+- [x] Horizontal Rule
 - [ ] Show/Hide Selects
 
 ### Second Stage
@@ -26,7 +26,6 @@ The goal is to add custom titles, placeholders, show/hide fields with selects, e
 ### Inline Title
 `pods_inline_title`
 
-
 ### Custom Title
 `pods_title_{The Title}`
 
@@ -35,6 +34,9 @@ The goal is to add custom titles, placeholders, show/hide fields with selects, e
 
 #### Hidden label
 `pods_hidden_label`
+
+#### Horizontal Rule
+`pods_horizontal_rule`
 
 ---
 
