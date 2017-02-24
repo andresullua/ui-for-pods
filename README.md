@@ -1,4 +1,4 @@
-# UI for Pods
+![UI for Pods](http://www.estudiocraneo.com/github/images/ui-for-pods.jpg)
 
 This is a work in progress to improve [Pods](http://pods.io/) user interface through additional CSS classes.
 
