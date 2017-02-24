@@ -7,3 +7,6 @@ label.pods_inline_title{
   font-size: 1.3em;
   margin: 0 10px 0 0;
 }
+label.pods_hidden_label{
+  display:none!important;
+}
