@@ -4,15 +4,15 @@ This is a work in progress to improve [Pods](http://pods.io/) user interface thr
 
 The goal is to add custom titles, placeholders, show/hide fields with selects, etc.
 
-### First Stage
-- [x] Inline Title
-- [x] Custom Title
-- [x] Placeholder
-- [x] Hidden Label
-- [x] Horizontal Rule
-- [ ] Show/Hide Selects
+### Features
+- Inline & Custom Title
+- Placeholder
+- Hidden Label
+- Horizontal Rule
+- Links
 
-### Second Stage
+### Todo
+- [ ] Show/Hide Selects
 - [ ] Tabs
 - [ ] Custom user style
 
@@ -35,8 +35,12 @@ The goal is to add custom titles, placeholders, show/hide fields with selects, e
 #### Hidden label
 `pods_hidden_label`
 
+#### Hidden Input
+`pods_hidden_input`
+
 #### Horizontal Rule
 `pods_horizontal_rule`
+
 
 ---
 

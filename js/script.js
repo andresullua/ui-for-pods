@@ -11,24 +11,26 @@ var UiForPods = function(){
   var add_css = {
     title: prefix+'title_',
     placeholder: prefix+'placeholder_',
+    hidden_input: prefix+'hidden_input',
     horizontal_rule: prefix+'horizontal_rule'
   }
   
   this.init = function(){
-    titles();
+    title();
     placeholder();
+    hidden_input();
     horizontal_rule();
     jQuery(form).show();
   }
-
-  var titles = function(){
+    
+  var title = function(){
     jQuery("label[class*='"+add_css.title+"']").each(function(e){
       var $this = jQuery(this);
       var $tr = jQuery(this).closest('tr');
       var classes = $this.attr('class');
       var title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title,'');
       title = getCleanText(title);
-
+  
       var id = 'title-'+e;
       if(title){
         $this.removeClass(add_css.title+title);
@@ -37,7 +39,7 @@ var UiForPods = function(){
       }
     });
   }
-    
+      
   var placeholder = function(){
     jQuery("label[class*='"+add_css.placeholder+"']").each(function(){
       var $this = jQuery(this);
@@ -50,8 +52,7 @@ var UiForPods = function(){
         $tr.find('input').attr('placeholder', placeholder);
       }
     })
-  }
-  
+  }  
   
   var horizontal_rule = function(){
     jQuery("label[class*='"+add_css.horizontal_rule+"']").each(function(){
@@ -59,6 +60,15 @@ var UiForPods = function(){
       var $tr	= $this.closest('tr');
       $this.removeClass(add_css.horizontal_rule);
       jQuery('<tr class="'+add_css.horizontal_rule+'"><th></th><td></td></tr>').insertAfter($tr);
+    })
+  }
+  
+  var hidden_input = function(){
+    jQuery("label[class*='"+add_css.hidden_input+"']").each(function(){
+      var $this = jQuery(this);
+      var $tr	= $this.closest('tr');
+      $this.removeClass(add_css.hidden_input);
+      $tr.find('td').addClass(add_css.hidden_input);
     })
   }
   

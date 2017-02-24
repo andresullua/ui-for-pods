@@ -1,13 +1,13 @@
 .pods-form{
   display:none
 }
-
 label.pods_inline_title{
   color: #23282d;
   font-size: 1.3em;
   margin: 0 10px 0 0;
 }
-label.pods_hidden_label{
+label.pods_hidden_label,
+td.pods_hidden_input{
   display:none!important;
 }
 
