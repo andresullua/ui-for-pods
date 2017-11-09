@@ -10,11 +10,7 @@ The goal is to add custom titles, placeholders, show/hide fields with selects, e
 - Hidden Label
 - Horizontal Rule
 - Links
-
-### Todo
-- [ ] Show/Hide Selects
-- [ ] Tabs
-- [ ] Custom user style
+- Show/Hide fields
 
 ---
 
@@ -41,6 +37,13 @@ The goal is to add custom titles, placeholders, show/hide fields with selects, e
 #### Horizontal Rule
 `pods_horizontal_rule`
 
+#### Show/Hide Fields
+
+###### On Simple Relationship field:
+`pods_select_{select_name}`
+
+###### On Fields to Show/Hide:
+`pods_onselect_{custom_defined_option_value}`
 
 ---
 

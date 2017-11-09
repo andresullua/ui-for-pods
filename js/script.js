@@ -11,7 +11,9 @@ var UiForPods = function() {
   var add_css = {
     title: prefix + 'title_',
     placeholder: prefix + 'placeholder_',
-    hidden_input: prefix + 'hidden_input'
+    hidden_input: prefix + 'hidden_input',
+    select: prefix + 'select',
+    onselect: prefix + 'onselect'
   };
 
   this.init = function() {
@@ -19,6 +21,7 @@ var UiForPods = function() {
     placeholder();
     hidden_input();
     horizontal_rule();
+    select();
     jQuery(form).show();
   };
 
@@ -70,6 +73,22 @@ var UiForPods = function() {
       $tr.find('td').addClass(add_css.hidden_input);
     });
   };
+  
+  var select = function() {
+    jQuery("select[class*='" + add_css.select + "']").each(function() {
+      var $this = jQuery(this);
+      var classes = $this.attr('class');
+      var value = this.value;
+      var select = classes.slice(classes.indexOf(add_css.select)).replace(add_css.select, '');
+      select = getCleanText(select);
+      if (select) {
+        selectFields(value);
+        $this.on('change', function(e){
+          selectFields(this.value);
+        });
+      }
+    });
+  };
 
   //helpers
   function getCleanText(text) {
@@ -81,7 +100,14 @@ var UiForPods = function() {
     var text_to_get = text.substring(start_pos, end_pos)
     return text_to_get;
   };
-
+  
+  function selectFields(value){
+    jQuery(form).find("[class*='" + add_css.onselect + "']").closest('tr').addClass('hidden_field');
+    if(value){
+      jQuery(form).find("." + add_css.onselect + "_" + value).closest('tr').removeClass('hidden_field');
+    }
+  };
+  
   this.init();
 
 }
