@@ -1,21 +1,24 @@
-.pods-form{
-  display:none
+.pods-form {
+  display: none
 }
-label.pods_inline_title{
+
+label.pods_inline_title {
   color: #23282d;
   font-size: 1.3em;
   margin: 0 10px 0 0;
 }
+
 label.pods_hidden_label,
-td.pods_hidden_input{
-  display:none!important;
+td.pods_hidden_input {
+  display: none!important;
 }
 
-tr.pods_horizontal_rule{
+tr.pods_horizontal_rule {
   border-bottom: 1px solid #ddd;
 }
+
 tr.pods_horizontal_rule th,
-tr.pods_horizontal_rule td{
+tr.pods_horizontal_rule td {
   height: 1px;
   padding: 5px 0;
 }
