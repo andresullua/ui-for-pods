@@ -30,14 +30,20 @@ var UiForPods = function() {
       var $this = jQuery(this);
       var $tr = jQuery(this).closest('tr');
       var classes = $this.attr('class');
+      var option = classes.indexOf(add_css.onselect);
+      if (option > -1) {
+        option = classes.slice(option).replace(add_css.option, '');
+        option = option.split(" ")[0];
+      }
       var title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title, '');
       title = getCleanText(title);
-
       var id = 'title-' + e;
       if (title) {
         $this.removeClass(add_css.title + title);
         $tr.attr('id', id);
-        jQuery('<h3 class="title" for="' + id + '">' + title + '</h3>').insertBefore($tr);
+        var title_class = "title";
+        title_class = option != -1 ? title_class + " " + option : title_class;
+        jQuery('<h3 class="' + title_class + '" for="' + id + '">' + title + '</h3>').insertBefore($tr);
       }
     });
   };
@@ -73,7 +79,7 @@ var UiForPods = function() {
       $tr.find('td').addClass(add_css.hidden_input);
     });
   };
-  
+
   var select = function() {
     jQuery("select[class*='" + add_css.select + "']").each(function() {
       var $this = jQuery(this);
@@ -83,7 +89,7 @@ var UiForPods = function() {
       select = getCleanText(select);
       if (select) {
         selectFields(value);
-        $this.on('change', function(e){
+        $this.on('change', function(e) {
           selectFields(this.value);
         });
       }
@@ -100,14 +106,16 @@ var UiForPods = function() {
     var text_to_get = text.substring(start_pos, end_pos)
     return text_to_get;
   };
-  
-  function selectFields(value){
+
+  function selectFields(value) {
     jQuery(form).find("[class*='" + add_css.onselect + "']").closest('tr').addClass('hidden_field');
-    if(value){
+    jQuery(form).find("h3[class*='" + add_css.onselect + "']").addClass('hidden_field');
+    if (value) {
       jQuery(form).find("." + add_css.onselect + "_" + value).closest('tr').removeClass('hidden_field');
+      jQuery(form).find("h3." + add_css.onselect + "_" + value).removeClass('hidden_field');
     }
   };
-  
+
   this.init();
 
 }

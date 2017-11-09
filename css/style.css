@@ -23,6 +23,7 @@ tr.pods_horizontal_rule td {
   padding: 5px 0;
 }
 
-tr.hidden_field {
+tr.hidden_field,
+h3.hidden_field {
   display: none!important;
 }
