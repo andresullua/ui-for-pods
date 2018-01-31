@@ -1,11 +1,12 @@
 var uiForPods;
+
 jQuery(function($) {
   uiForPods = new UiForPods();
 });
 
 var UiForPods = function() {
   var _ = this;
-  var form = '.pods-form';
+  var form = '#pods-meta-more-fields';
   var prefix = 'pods_';
 
   var add_css = {
@@ -30,10 +31,12 @@ var UiForPods = function() {
       var $this = jQuery(this);
       var $tr = jQuery(this).closest('tr');
       var classes = $this.attr('class');
-      var option = classes.indexOf(add_css.onselect);
-      if (option > -1) {
-        option = classes.slice(option).replace(add_css.option, '');
-        option = option.split(" ")[0];
+      var classes_array = classes.split(" ");
+      var options = [];
+      for(var i in classes_array){
+        if(classes_array[i].indexOf(add_css.onselect) > -1){
+          options.push(classes_array[i]);
+        }
       }
       var title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title, '');
       title = getCleanText(title);
@@ -42,7 +45,9 @@ var UiForPods = function() {
         $this.removeClass(add_css.title + title);
         $tr.attr('id', id);
         var title_class = "title";
-        title_class = option != -1 ? title_class + " " + option : title_class;
+        for(var i in options){
+          title_class+= " "+options[i];
+        }
         jQuery('<h3 class="' + title_class + '" for="' + id + '">' + title + '</h3>').insertBefore($tr);
       }
     });

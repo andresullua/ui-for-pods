@@ -1,29 +1,33 @@
-.pods-form {
+#pods-meta-more-fields {
   display: none
 }
 
-label.pods_inline_title {
+#pods-meta-more-fields label.pods_inline_title {
   color: #23282d;
   font-size: 1.3em;
   margin: 0 10px 0 0;
 }
 
-label.pods_hidden_label,
-td.pods_hidden_input {
+#pods-meta-more-fields label.pods_hidden_label,
+#pods-meta-more-fields td.pods_hidden_input {
   display: none!important;
 }
 
-tr.pods_horizontal_rule {
+#pods-meta-more-fields tr.pods_horizontal_rule {
   border-bottom: 1px solid #ddd;
 }
 
-tr.pods_horizontal_rule th,
-tr.pods_horizontal_rule td {
+#pods-meta-more-fields tr.pods_horizontal_rule th,
+#pods-meta-more-fields tr.pods_horizontal_rule td {
   height: 1px;
   padding: 5px 0;
 }
 
-tr.hidden_field,
-h3.hidden_field {
+#pods-meta-more-fields tr.hidden_field,
+#pods-meta-more-fields h3.hidden_field {
   display: none!important;
+}
+
+#pods-meta-more-fields .pods-metabox tr.pods-field{
+  border-top:none!important;
 }
