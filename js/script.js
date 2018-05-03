@@ -6,7 +6,7 @@ jQuery(function($) {
 
 var UiForPods = function() {
   var _ = this;
-  var form = '#pods-meta-more-fields';
+  var form = '.pods-form table.form-table';
   var prefix = 'pods_';
 
   var add_css = {

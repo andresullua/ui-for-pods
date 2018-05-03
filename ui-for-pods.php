@@ -3,7 +3,7 @@
 * Plugin Name: UI for Pods Framework
 * Plugin URI: https://github.com/andresullua/ui-for-pods
 * Description: UI improvements for Pods Framework.
-* Version: 0.4.2
+* Version: 0.4.3
 * Author: Andrés Ullúa
 * Author URI: https://github.com/andresullua/
 * License: GPLv3

@@ -1,33 +1,33 @@
-#pods-meta-more-fields {
+.pods-form table.form-table {
   display: none
 }
 
-#pods-meta-more-fields label.pods_inline_title {
+.pods-form table.form-table label.pods_inline_title {
   color: #23282d;
   font-size: 1.3em;
   margin: 0 10px 0 0;
 }
 
-#pods-meta-more-fields label.pods_hidden_label,
-#pods-meta-more-fields td.pods_hidden_input {
+.pods-form table.form-table label.pods_hidden_label,
+.pods-form table.form-table td.pods_hidden_input {
   display: none!important;
 }
 
-#pods-meta-more-fields tr.pods_horizontal_rule {
+.pods-form table.form-table tr.pods_horizontal_rule {
   border-bottom: 1px solid #ddd;
 }
 
-#pods-meta-more-fields tr.pods_horizontal_rule th,
-#pods-meta-more-fields tr.pods_horizontal_rule td {
+.pods-form table.form-table tr.pods_horizontal_rule th,
+.pods-form table.form-table tr.pods_horizontal_rule td {
   height: 1px;
   padding: 5px 0;
 }
 
-#pods-meta-more-fields tr.hidden_field,
-#pods-meta-more-fields h3.hidden_field {
+.pods-form table.form-table tr.hidden_field,
+.pods-form table.form-table h3.hidden_field {
   display: none!important;
 }
 
-#pods-meta-more-fields .pods-metabox tr.pods-field{
+.pods-form table.form-table .pods-metabox tr.pods-field{
   border-top:none!important;
 }
