@@ -38,12 +38,13 @@ var UiForPods = function() {
           options.push(classes_array[i]);
         }
       }
-      var title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title, '');
-      title = getCleanText(title);
+      var raw_title = classes.slice(classes.indexOf(add_css.title)).replace(add_css.title, '');
+      var title = getCleanText(raw_title);
       var id = 'title-' + e;
       if (title) {
-        $this.removeClass(add_css.title + title);
+        $this.removeClass(add_css.title + raw_title);
         $tr.attr('id', id);
+        $tr.addClass('field-with-title');
         var title_class = "title";
         for(var i in options){
           title_class+= " "+options[i];
@@ -58,10 +59,10 @@ var UiForPods = function() {
       var $this = jQuery(this);
       var $tr = $this.closest('tr');
       var classes = $this.attr('class');
-      var placeholder = classes.slice(classes.indexOf(add_css.placeholder)).replace(add_css.placeholder, '');
-      placeholder = getCleanText(placeholder);
+      var raw_placeholder = classes.slice(classes.indexOf(add_css.placeholder)).replace(add_css.placeholder, '');
+      var placeholder = getCleanText(raw_placeholder);
       if (placeholder) {
-        $this.removeClass(add_css.placeholder + placeholder);
+        $this.removeClass(add_css.placeholder + raw_placeholder);
         $tr.find('input').attr('placeholder', placeholder);
       }
     });
@@ -90,8 +91,8 @@ var UiForPods = function() {
       var $this = jQuery(this);
       var classes = $this.attr('class');
       var value = this.value;
-      var select = classes.slice(classes.indexOf(add_css.select)).replace(add_css.select, '');
-      select = getCleanText(select);
+      var raw_select = classes.slice(classes.indexOf(add_css.select)).replace(add_css.select, '');
+      var select = getCleanText(raw_select);
       if (select) {
         selectFields(value);
         $this.on('change', function(e) {

@@ -28,6 +28,10 @@
   display: none!important;
 }
 
-.pods-form table.form-table .pods-metabox tr.pods-field{
-  border-top:none!important;
+.pods-form table.form-table tr.pods-field{
+  border-top:none;
+}
+
+.pods-form table.form-table tr.field-with-title{
+  border-top: 1px solid #ececec;
 }
